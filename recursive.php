@@ -1,10 +1,10 @@
 <?php
-function factorial(int $int):int{
+function factorial(int $int):float{
     if ($int == 1){
         return 1;
     }else{
-        return intval($int * factorial($int-1));
+        return $int * factorial($int-1);
     }
 }
 
-print factorial(189.189);
+print factorial(5);
