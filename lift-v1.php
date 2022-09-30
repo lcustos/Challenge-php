@@ -18,7 +18,7 @@ function nearestFloor(int $a, array $b): int
     return $b[array_search(min($c), $c)];
 }
 
-function getDirection(int $currentFloor, ?int $requestFloor,array $buttonCalled){
+function getDirection(int $currentFloor, ?int $requestFloor,array $buttonCalled):int{
     if (getFloor($currentFloor,$requestFloor,$buttonCalled)>$currentFloor){
         return 1;
     }elseif (getFloor($currentFloor,$requestFloor,$buttonCalled)<$currentFloor){
