@@ -1,16 +1,11 @@
 <?php
-function breakLines($string, $int) : string{
-    $count=0;
-    for ($i=0;$i<strlen($string);$i++){
-        if ($count >= $int){
-            if ($string[$i]==" "){
-                $string[$i]="\n";
-                $count = 0;
-            }
-        }
-        $count ++;
+function breakLines($string, $size) : string{
+    $count =1;
+    for($i=0;$i<strlen($string)/$size;$i++)
+    {
+        $position = strrpos(substr($string,($count-1)*$size,$count*$size)," ");
+        $string[$position+$size*$count] = "\n";
+        $count++;
     }
     return $string;
 }
-
-print breakLines('Title is long Line with words break', 12);
