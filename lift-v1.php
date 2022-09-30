@@ -6,7 +6,7 @@ function getFloor(int $currentFloor, ?int $requestFloor,array $buttonCalled): ?i
     if (!empty($buttonCalled)){
         return nearestFloor($currentFloor, $buttonCalled);
     }
-    return $currentFloor;
+    return null;
 
 }
 
@@ -26,3 +26,5 @@ function getDirection(int $currentFloor, ?int $requestFloor,array $buttonCalled)
     }
     return 0;
 }
+
+print getFloor(1, null, []);
