@@ -3,8 +3,8 @@ function factorial(int $int):int{
     if ($int == 1){
         return 1;
     }else{
-        return $int * factorial($int-1);
+        return intval($int * factorial($int-1));
     }
 }
 
-print factorial(5.2);
+print factorial(189.189);
