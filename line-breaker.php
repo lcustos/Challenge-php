@@ -7,7 +7,7 @@ function breakLines($string, $int) : string{
         if ($string[$i] == " "){
             $space = $i;
         }
-        if ($count == $int){
+        if ($count == $int+1){
             if ($string[$i]==" ") {
                 $string[$i] = "\n";
                 $count = 0;
@@ -20,4 +20,4 @@ function breakLines($string, $int) : string{
     return $string;
 }
 
-print breakLines('Title is long Line with words break', 12);
+print breakLines('Line with words', 15);
