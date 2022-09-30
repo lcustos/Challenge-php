@@ -19,5 +19,3 @@ function breakLines($string, $int) : string{
     }
     return $string;
 }
-
-print breakLines('Line with words', 15);
