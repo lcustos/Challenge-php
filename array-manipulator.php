@@ -5,7 +5,13 @@ function reverse($array):array{
 }
 
 function push($array, ...$string): int{
-    return array_push($array,...$string);
+    array_push($array,...$string);
+    $count = 0;
+    foreach ($array as $s){
+        $count +=1;
+    }
+    var_dump($array);
+    return $count;
 }
 
 function sum($array):int{
@@ -25,4 +31,3 @@ function merge(array ...$array):array
 {
     return array_merge($array);
 }
-
