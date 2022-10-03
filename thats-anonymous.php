@@ -7,7 +7,7 @@ $today = function () use ($month, $day, $year):string{
     return "It is $month $day, $year";
 };
 
-$isLeapYear = function () use ($year):bool{
+$isLeapYear = function ($year){
     if($year%4==0){
         return true;
     }else{
