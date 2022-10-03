@@ -20,7 +20,7 @@ function sum($array):int{
 function arrayContains($array, int|string|float $mix):mixed{
     foreach ($array as $a) {
         if ($a == $mix){
-            return true;
+            return $a;
         }
     }
     return "Nothing";
@@ -31,5 +31,4 @@ function merge(array ...$array):array
     return array_merge($array);
 }
 
-$tab = [];
-push($tab, "first", "second", "five");
+print arrayContains(["Ok", 5, 5.4], 5.4);
