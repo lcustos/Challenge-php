@@ -43,7 +43,22 @@ function explodeWords($string, $separator=' ', $limit=PHP_INT_MAX):array{
         }
         array_push($array, $str);
     }elseif ($limit==0){
-        return explodeWords($string,$separator,1);
+        $max_limit=-1;
+        for ($i = 0; $i<=strlen($string);$i++){
+            if ($limit-1>$max_limit){
+                if ($string[$i]==$separator){
+                    $max_limit +=1;
+                    array_push($array, $str);
+                    $str="";
+                }
+                else {
+                    $str .= $string[$i];
+                }
+            }else{
+                $str.=$string[$i];
+            }
+        }
+        array_push($array, $str);
     }else{
         for ($i = 0; $i<=strlen($string);$i++){
             if ($string[$i]==$separator){
