@@ -6,3 +6,5 @@ function factorial(int $int):int|float{
         return $int * factorial($int-1);
     }
 }
+
+print factorial(45);
