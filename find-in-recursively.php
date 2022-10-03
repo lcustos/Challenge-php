@@ -1,25 +1,13 @@
 <?php
-function findIn($string, $array):string|bool
+function findIn($key,$array): string | bool
 {
-    foreach ($array as $k){
-        if($k==$string){
-            return 
+    $result = false;
+    foreach ($array as $k => $v) {
+        if ($k == $key) {
+            return $v;
+        } elseif (is_array($v)) {
+            $result = findIn($key, $v);
         }
     }
+    return $result;
 }
-
-
-$tab = [
-    "name" => "forIn",
-    "type" => "function",
-    "arguments" => [
-        "firstParam" => [
-            "paramType" => "string",
-            "description" => "the value key to find"
-        ],
-        "secondParam" => "array"
-    ],
-    "return" => "string or bool"
-];
-
-print findIn('paramType', $tab);
