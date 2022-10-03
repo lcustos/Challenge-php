@@ -28,7 +28,14 @@ function arrayContains($array, int|string|float $mix):mixed{
 
 function merge(array ...$array):array
 {
-    return array_merge($array);
+    $array2=[];
+    foreach ($array as $a){
+        foreach ($a as $key){
+            push($array2, $key);
+        }
+    }
+    var_dump($array2);
+    return $array2;
 }
 
-print arrayContains(["Ok", 5, 5.4], 5.4);
+merge(["firstTab"], ["secondTab", "secondTabb"], ["thirdTab"]);
