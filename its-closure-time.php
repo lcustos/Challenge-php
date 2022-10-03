@@ -1,14 +1,27 @@
 <?php
-function add ($int,$int2){
-    return $int + $int2;
-};
-function sub ($int,$int2){
-    return $int - $int2;
-};
-function mul ($int,$int2){
-    return $int * $int2;
-};
+function mul($x)
+{
+    return function ($y) use ($x) {
+        return $x * $y;
+    };
+}
 
-$f = function ():array {
-    return $array =["+"=>add(), "-"=>sub(),"*"=>mul()];
-};
+function add($x)
+{
+    return function ($y) use ($x) {
+        return $x + $y;
+    };
+}
+
+function sub($x)
+{
+    return function ($y) use ($x) {
+        return $x - $y;
+    };
+}
+
+function f():array{
+    $array = array('+'=>function($a,$b){return $a+$b;},'-'=>function($a,$b){return $a-$b;},'*'=>function($a,$b){return $a*$b;});
+    return $array;
+}
+
