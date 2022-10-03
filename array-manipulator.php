@@ -4,13 +4,12 @@ function reverse($array):array{
     return array_reverse($array);
 }
 
-function push($array, ...$string): int{
+function push(&$array, ...$string): int{
     array_push($array,...$string);
     $count = 0;
     foreach ($array as $s){
         $count +=1;
     }
-    var_dump($array);
     return $count;
 }
 
@@ -31,3 +30,6 @@ function merge(array ...$array):array
 {
     return array_merge($array);
 }
+
+$tab = [];
+push($tab, "first", "second", "five");
