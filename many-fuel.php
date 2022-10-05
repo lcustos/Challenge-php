@@ -11,7 +11,7 @@ class Car{
     }
 
     public function ride($float) :  self{
-        $this->setTank(1/20)*$float;
+        $this->setTank(1/20*$float);
         return $this;
     }
 }
