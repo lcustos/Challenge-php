@@ -13,10 +13,12 @@ class Rectangle extends AbstractGeometry{
         $this->height = $height;
     }
 
-    public function area() {
+    public function area(): float|int
+    {
         return $this->width * $this->height ;
     }
-    public function perimeter() {
+    public function perimeter(): float|int
+    {
         return ($this->width * $this->height)*2;
     }
 }
@@ -28,10 +30,12 @@ class Square extends AbstractGeometry{
         $this->width = $width;
     }
 
-    public function area() {
+    public function area(): int
+    {
         return $this->width **2;
     }
-    public function perimeter() {
+    public function perimeter(): float|int
+    {
         return $this->width * 4;
     }
 
@@ -56,3 +60,5 @@ class Triangle extends AbstractGeometry{
     }
 
 }
+
+print(new Rectangle(6,3))->perimeter();
