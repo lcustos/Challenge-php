@@ -19,7 +19,7 @@ class Rectangle extends AbstractGeometry{
     }
     public function perimeter(): float|int
     {
-        return ($this->width * $this->height)*2;
+        return ($this->width + $this->height)*2;
     }
 }
 
