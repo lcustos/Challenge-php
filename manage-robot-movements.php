@@ -31,7 +31,3 @@ function manageMovements($string):array{
     }
    return $array2;
 }
-
-$tab = 'RRLFBF';
-
-print_r(manageMovements($tab));
