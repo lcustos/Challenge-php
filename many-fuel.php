@@ -3,7 +3,7 @@
 class Car{
     private int $tank;
 
-    public function setFuelLevel(float $fuelLevel): self
+    public function setTank(float $fuelLevel): self
     {
         $this->tank = $fuelLevel;
 
@@ -11,7 +11,7 @@ class Car{
     }
 
     public function ride($float) :  self{
-        $this->setFuelLevel(1/20)*$float;
+        $this->setTank(1/20)*$float;
         return $this;
     }
 }
