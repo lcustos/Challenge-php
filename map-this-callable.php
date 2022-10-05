@@ -1,7 +1,7 @@
 <?php
 function myArrayMap(?callable $callable, array $array, array ...$array2):array{
     $result = null;
-    if ($callable === null) {
+    if ($callable === null && $array2 != null) {
         $result = array();
         for ($i = 0; $i < count($array); $i++) {
             $result[$i]=[];
@@ -13,6 +13,8 @@ function myArrayMap(?callable $callable, array $array, array ...$array2):array{
             array_push($result[$i], $array[$i]);
         }
         return $result;
+    }elseif ($callable === null){
+        return $array;
     }
     foreach ($array as $value) {
         $result[] = $callable($value);
@@ -21,4 +23,4 @@ function myArrayMap(?callable $callable, array $array, array ...$array2):array{
     return $result;
 }
 
-print_r(myArrayMap(null, [1, 2, 3], ['one', 'two', 'three'], ['uno', 'dos', 'tres']));
+print_r(myArrayMap(null, [1, 3, 7]));
