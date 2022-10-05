@@ -1,7 +1,7 @@
 <?php
 
 class Car{
-    private int $tank;
+    private $tank;
 
     public function setTank(float $fuelLevel): self
     {
