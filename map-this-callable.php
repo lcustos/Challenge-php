@@ -1,5 +1,5 @@
 <?php
-function myArrayMap(array $array, callable $callable, $initial = null){
+function myArrayMap( callable $callable, array $array, $initial = null){
     $result = $initial;
     foreach ($array as $value) {
         $result = $callable($result, $value);
