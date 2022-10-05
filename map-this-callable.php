@@ -1,6 +1,6 @@
 <?php
-function myArrayMap(callable $callable, array $array, $initial = null){
-    $result = $initial;
+function myArrayMap(callable $callable, array $array){
+    $result = array();
     foreach ($array as $value) {
         $result[] = $callable($value);
     }
