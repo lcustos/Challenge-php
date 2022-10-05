@@ -5,12 +5,10 @@ function myArrayMap(?callable $callable, array $array, array ...$array2):array{
         $result = array();
         for ($i = 0; $i < count($array); $i++) {
             $result[$i]=[];
+            array_push($result[$i], $array[$i]);
             foreach ($array2 as $key) {
-//                $result[$i] = $key[$i];
                 array_push($result[$i], $key[$i]);
             }
-//            $result[$i] = $array[$i];
-            array_push($result[$i], $array[$i]);
         }
         return $result;
     }elseif ($callable === null){
@@ -23,4 +21,4 @@ function myArrayMap(?callable $callable, array $array, array ...$array2):array{
     return $result;
 }
 
-print_r(myArrayMap(null, [1, 3, 7]));
+print_r(myArrayMap(null, [1, 2, 3], ['one', 'two', 'three'], ['uno', 'dos', 'tres']));
