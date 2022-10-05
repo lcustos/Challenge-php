@@ -1,12 +1,12 @@
 <?php
 class Mojito{
     public float $alcoholRate;
-    public array $ingredient;
+    public array $ingredients;
     public int $price;
 
-    public function __construct(float $alcoholRate=0.15, array $ingredient = ["rum", "lime", "sparkling water", "mint", "sugar"], int $price = 8){
+    public function __construct(float $alcoholRate=0.15, array $ingredients = ["rum", "lime", "sparkling water", "mint", "sugar"], int $price = 8){
         $this->alcoholRate = $alcoholRate;
-        $this->ingredient = $ingredient;
+        $this->ingredients = $ingredients;
         $this->price = $price;
     }
 }
